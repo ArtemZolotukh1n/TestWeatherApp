@@ -8,11 +8,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,11 +26,18 @@ import com.example.testweatherapp.R
 import com.example.testweatherapp.common.convertUnixToTime
 import com.example.testweatherapp.network.model.Current
 
+/**
+ * A composable that displays the current weather data in a card format.
+ *
+ * @param weatherData The [Current] data object containing the current weather data.
+ * @param tint An optional [Color] parameter for setting the background color of the card.
+ * @param modifier An optional [Modifier] for the composable.
+ */
 @Composable
 fun WeatherCard(
     weatherData: Current,
-    tint: Color = Color(0xFF384266),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    tint: Color = Color(0xFF384266)
 ) {
     Card(
         backgroundColor = tint,
@@ -104,32 +109,5 @@ fun WeatherCard(
                 )
             }
         }
-    }
-}
-
-@Composable
-fun WeatherDataDisplay(
-    value: Int,
-    unit: String,
-    icon: ImageVector,
-    modifier: Modifier = Modifier,
-    textStyle: TextStyle = TextStyle(),
-    iconTint: Color = Color.White
-) {
-    Row(
-        modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = null,
-            tint = iconTint,
-            modifier = Modifier.size(25.dp)
-        )
-        Spacer(modifier = Modifier.width(4.dp))
-        Text(
-            text = "$value $unit",
-            style = textStyle
-        )
     }
 }

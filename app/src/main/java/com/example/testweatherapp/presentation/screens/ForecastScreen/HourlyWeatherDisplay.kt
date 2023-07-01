@@ -14,6 +14,12 @@ import com.example.testweatherapp.network.model.Hourly
 import com.example.testweatherapp.presentation.screens.MainScreen.WeatherIcon
 import kotlin.math.roundToInt
 
+/**
+ * A composable that displays the hourly weather data.
+ *
+ * @param weatherData The [Hourly] data object containing the weather data for the hour.
+ * @param modifier An optional [Modifier] for the composable.
+ */
 @Composable
 fun HourlyWeatherDisplay(
     weatherData: Hourly,

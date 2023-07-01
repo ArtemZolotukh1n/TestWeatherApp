@@ -28,6 +28,12 @@ import com.example.testweatherapp.common.Result
 import com.example.testweatherapp.common.convertUnixToTime
 import com.example.testweatherapp.presentation.viewmodels.WeatherViewModel
 
+/**
+ * A composable that displays the details screen. It shows either loading, success or error state
+ * based on the [viewModel]'s [weatherData] state.
+ *
+ * @param viewModel The [WeatherViewModel] which contains the [weatherData].
+ */
 @Composable
 fun DetailsScreen(viewModel: WeatherViewModel) {
     val weatherData = viewModel.weatherData.collectAsState().value

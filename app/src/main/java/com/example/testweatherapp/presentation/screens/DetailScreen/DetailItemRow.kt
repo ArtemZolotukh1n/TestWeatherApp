@@ -17,6 +17,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable that displays a row of detail items.
+ *
+ * @param content The [@Composable] function to be used for building the content of the row.
+ */
 @Composable
 fun DetailItemRow(content: @Composable RowScope.() -> Unit) {
     Box(

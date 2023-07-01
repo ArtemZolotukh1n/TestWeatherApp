@@ -18,6 +18,12 @@ import androidx.compose.ui.graphics.Color
 import com.example.testweatherapp.common.Result
 import com.example.testweatherapp.presentation.viewmodels.WeatherViewModel
 
+/**
+ * A composable that displays the forecast screen. It shows either loading, success or error state
+ * based on the [viewModel]'s [weatherData] state.
+ *
+ * @param viewModel The [WeatherViewModel] which contains the [weatherData].
+ */
 @Composable
 fun ForecastScreen(viewModel: WeatherViewModel) {
     val weatherData = viewModel.weatherData.collectAsState().value

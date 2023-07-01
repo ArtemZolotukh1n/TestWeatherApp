@@ -15,6 +15,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable that displays a detail item in a column format.
+ *
+ * @param value The value of the detail.
+ * @param icon The icon representing the detail.
+ * @param label The label for the detail.
+ * @param modifier An optional [Modifier] for the composable.
+ * @param tint An optional [Color] for the icon's tint.
+ */
 @Composable
 fun DetailItemColumn(
     value: String,

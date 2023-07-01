@@ -14,6 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.testweatherapp.network.model.Hourly
 
+/**
+ * A composable that displays the hourly weather forecast.
+ *
+ * @param hourlyWeatherData The list of [Hourly] data objects containing the weather data for each hour.
+ * @param modifier An optional [Modifier] for the composable.
+ */
 @Composable
 fun WeatherForecast(
     hourlyWeatherData: List<Hourly>,
