@@ -6,7 +6,6 @@ import com.example.testweatherapp.common.Result
 import com.example.testweatherapp.network.model.WeatherDto
 import com.example.testweatherapp.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -29,10 +28,12 @@ class WeatherViewModel @Inject constructor(
     val isLoading = _isLoading.asStateFlow()
 
     init {
-        getWeather()
+        viewModelScope.launch {
+            getWeather()
+        }
     }
 
-    private fun getWeather() {
+    private suspend fun getWeather() {
         viewModelScope.launch {
             try {
                 val data = _weatherRepository.getWeather()
@@ -40,7 +41,6 @@ class WeatherViewModel @Inject constructor(
             } catch (e: Exception) {
                 _weatherData.value = Result.Error("Failed to fetch weather data.")
             } finally {
-                delay(1000)
                 _isLoading.value = false
             }
         }
