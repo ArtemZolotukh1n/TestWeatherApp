@@ -18,6 +18,7 @@ fun NavGraph(
     navController: NavHostController,
     weatherViewModel: WeatherViewModel,
 ) {
+
     NavHost(
         navController = navController,
         startDestination = Screen.MainScreen.route
@@ -33,5 +34,9 @@ fun NavGraph(
         composable(Screen.ForecastScreen.route) {
             ForecastScreen(viewModel = weatherViewModel)
         }
+
+        /*composable(Screen.SplashScreen.route) {
+            SplashScreen(navController = navController)
+        }*/
     }
 }

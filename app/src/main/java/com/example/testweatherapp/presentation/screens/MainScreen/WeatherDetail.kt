@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -32,7 +33,13 @@ fun WeatherDetail(
 ) {
     AssistChip(
         leadingIcon = { Icon(imageVector = icon, contentDescription = label, tint = tint) },
-        label = { Text(text = value, modifier = Modifier.padding(vertical = 6.dp)) },
+        label = {
+            Text(
+                text = value,
+                modifier = Modifier.padding(vertical = 6.dp),
+                style = MaterialTheme.typography.bodyMedium
+            )
+        },
         shape = AssistChipDefaults.shape,
         onClick = {},
         border = AssistChipDefaults.assistChipBorder()

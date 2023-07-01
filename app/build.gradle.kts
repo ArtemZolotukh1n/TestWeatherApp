@@ -75,6 +75,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.material:material:1.4.3")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

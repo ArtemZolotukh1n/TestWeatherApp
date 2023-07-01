@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Starting" parent="Theme.TestWeatherApp">
+        <item name="windowSplashScreenBackground">#293251</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_inside_icon</item>
+
+    </style>
+
+</resources>
